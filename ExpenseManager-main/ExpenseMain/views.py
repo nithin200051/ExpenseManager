@@ -110,7 +110,9 @@ def profile_settings(request):
             return render(request,'profile.html',context)
         else:
             user_name=request.POST.get('username')
+            password=request.POST.get('password')
             userDetails.name=user_name
+            userDetails.password=password
             userDetails.save()
             return redirect('home')
     else:
